@@ -1,0 +1,29 @@
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 35px;
+  color: darkblue;
+}
+
+header {
+  padding: 1em;
+  border-bottom: rgb(168, 74, 173) 2px solid;
+  background-color: antiquewhite;
+}
+
+#navbarItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.gallery {
+  padding: 2em;
+}
+
+#loginText {
+  font-size: 20px;
+  color: black;
+  padding: 0.5em;
+}
