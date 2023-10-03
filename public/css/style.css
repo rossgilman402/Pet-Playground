@@ -12,3 +12,18 @@ header {
   border-bottom: rgb(168, 74, 173) 2px solid;
   background-color: antiquewhite;
 }
+
+#navbarItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.gallery {
+  padding: 2em;
+}
+
+#loginText {
+  font-size: 20px;
+  color: black;
+  padding: 0.5em;
+}
