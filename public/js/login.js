@@ -1,5 +1,3 @@
-const { create } = require("../../models/BlogPost");
-
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,15 +19,6 @@ const loginFormHandler = async (event) => {
   }
 };
 
-const createNewFormHandler = async (event) => {
-  event.preventDefault();
-  document.location.replace("/createAccount");
-};
-
 document
-  .querySelector("#login-button")
+  .querySelector("#form-submit")
   .addEventListener("submit", loginFormHandler);
-
-document
-  .querySelector("#sign-up")
-  .addEventListener("click", createNewFormHandler);
