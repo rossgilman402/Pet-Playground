@@ -20,6 +20,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+///api/users/login
 router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
