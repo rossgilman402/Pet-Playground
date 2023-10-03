@@ -74,4 +74,22 @@ router.post("/:id", withAuth, async (req, res) => {
   }
 });
 
+//Get pets from user
+router.get("/:id", withAuth, async (req, res) => {
+  try {
+    const petData = await Pet.findAll({
+      where: {
+        user_id: req.params.id,
+      },
+    });
+
+    const pets = petData.map((pet) => pet.get({ plain: true }));
+
+    res.status(200).json(pets);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
