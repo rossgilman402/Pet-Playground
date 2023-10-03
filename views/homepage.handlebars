@@ -1,0 +1,11 @@
+<section >
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+    {{#each post}}
+    {{> post-details}}
+    {{/each}}
+  </section>
+</section>
+{{else}}
+<a href="/login">Login First</a>
+   {{/if}}
