@@ -56,7 +56,6 @@ header {
 .post-content {
   position: relative;
   top: 20%;
-  /* right: 25px; */
   background-color: antiquewhite;
   width: 75%;
 }
