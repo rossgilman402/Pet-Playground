@@ -40,7 +40,9 @@ router.get("/profile", withAuth, async (req, res) => {
     });
 
     const pets = petData.map((pet) => pet.get({ plain: true }));
+    console.log("pet", pets);
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log("post", posts);
     res.render("profile", {
       posts,
       pets,

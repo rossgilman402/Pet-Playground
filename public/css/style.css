@@ -37,14 +37,11 @@ header {
 .sidebar {
   height: 100%;
   width: 150px;
-  position: absolute;
   left: 0;
   top: 0;
-  padding-top: 40px;
+  background-color: gray;
 }
 
-.sidebar div {
-  padding: 8px;
-  font-size: 24px;
-  display: block;
+.profileBody {
+  margin-left: 155px;
 }

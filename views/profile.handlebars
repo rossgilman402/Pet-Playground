@@ -1,12 +1,28 @@
-<div class="sidebar">
-   <a><p>Add a new pet</p></a> 
-   <p>Current Pets</p>
-<ul>
-    <li>{{name}}</li>
-</ul>
+
+ <div class="columns">
+
+
+<div class="column is-one-fifth">
+
+  <aside class="menu">
+    <p class="menu-label">
+      Current Pets
+    </p>
+    <ul class="menu-list">
+        {{#each pets as |pet|}}
+    <li><a href="/profile/{{name}}">{{name}}</a></li>
+    {{/each}}
+    </ul>
+    <p class="menu-label">
+      Add new pet
+    </p>
+    
+  </aside>
+
 </div>
 
-<div class="card">
+<div class="column">
+<div class="card " >
   <div class="card-content">
     <div class="media">
       <div class="media-left">
@@ -15,7 +31,7 @@
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">{{name}}, {{age}}</p>
+        <p class="title is-4">{{name}} , {{age}} years old</p>
         <p class="subtitle is-6">@{{username}}</p>
       </div>
     </div>
@@ -23,8 +39,9 @@
     {{bio}} 
     </div>
   </div>
+ 
+  
 </div>
-
  <section class="flex-row justify-center">
     {{#each posts as |post|}}
     {{> post-details}}
