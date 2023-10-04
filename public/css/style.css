@@ -38,14 +38,6 @@ header {
   padding: 0.5em;
 }
 
-.sidebar {
-  height: 100%;
-  width: 150px;
-  left: 0;
-  top: 0;
-  background-color: gray;
-}
-
 .profileBody {
   margin-left: 155px;
 }
@@ -68,7 +60,16 @@ header {
 .column.card-image-column {
   flex: none;
 }
+#profileHeader {
+  box-shadow: 0px 0px 20px 0px;
+}
 
+#newPostForm {
+  margin: 0.75em;
+  box-shadow: 0px 2px 10px 0px;
+  padding: 0.5em;
+  border-radius: 4px;
+}
 @media screen and (max-width: 769px) {
   .post-content {
     flex: none;
