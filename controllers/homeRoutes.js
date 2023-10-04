@@ -32,7 +32,7 @@ router.get("/profile/", withAuth, async (req, res) => {
 
     const pets = petData.map((pet) => pet.get({ plain: true }));
     const currentPet = pets[0];
-    res.redirect("profile/" + currentPet.name);
+    res.redirect("profile/" + currentPet.username);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -40,27 +40,32 @@ router.get("/profile/", withAuth, async (req, res) => {
 
 //Route for the pet profile pages
 // GET /profile/name
-router.get("/profile/:name", withAuth, async (req, res) => {
+router.get("/profile/:username", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({
       where: {
         user_id: req.session.userId,
       },
     });
-    const petIDList = petData.map((pet) => pet.id);
+    const pets = petData.map((pet) => pet.get({ plain: true }));
+    const currentPet = pets.filter(
+      (pet) => pet.username === req.params.username
+    )[0];
+    // const petIDList = petData.map((pet) => pet.id);
     const postData = await Post.findAll({
       where: {
-        [Op.or]: {
-          pet_id: petIDList,
-        },
+        // [Op.or]: {
+        //   pet_id: petIDList,
+        // },
+        pet_id: currentPet.id,
       },
     });
 
-    const pets = petData.map((pet) => pet.get({ plain: true }));
     console.log("pet", pets);
     const posts = postData.map((post) => post.get({ plain: true }));
-    const currentPet = pets.filter((pet) => pet.name === req.params.name)[0];
-    console.log(currentPet);
+    // console.log(posts);
+
+    console.log("POSTSOSOOS", posts);
     res.render("profile", {
       posts,
       pets,
