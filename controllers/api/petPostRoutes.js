@@ -12,7 +12,7 @@ router.post("/", withAuth, async (req, res) => {
       title: req.body.title,
       caption: req.body.caption,
       picture: req.body.picture,
-      pet_id: req.body.pet_id,
+      pet_id: req.session.petId,
     });
 
     res.status(200).json(postData);

@@ -51,21 +51,18 @@ router.get("/profile/:username", withAuth, async (req, res) => {
     const currentPet = pets.filter(
       (pet) => pet.username === req.params.username
     )[0];
-    // const petIDList = petData.map((pet) => pet.id);
     const postData = await Post.findAll({
       where: {
-        // [Op.or]: {
-        //   pet_id: petIDList,
-        // },
         pet_id: currentPet.id,
       },
     });
 
-    console.log("pet", pets);
-    const posts = postData.map((post) => post.get({ plain: true }));
-    // console.log(posts);
+    req.session.save(() => {
+      req.session.petId = currentPet.id;
+    });
 
-    console.log("POSTSOSOOS", posts);
+    const posts = postData.map((post) => post.get({ plain: true }));
+
     res.render("profile", {
       posts,
       pets,

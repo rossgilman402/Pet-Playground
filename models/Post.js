@@ -21,7 +21,6 @@ Post.init(
     },
     picture: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     pet_id: {
       type: DataTypes.INTEGER,

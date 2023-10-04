@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+const createPetFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector("#name").value.trim();
@@ -10,8 +10,8 @@ const loginFormHandler = async (event) => {
   const favorite_food = document.querySelector("#favorite-food").value.trim();
   const favorite_toy = document.querySelector("#favorite-toy").value.trim();
   const bio = document.querySelector("#bio").value.trim();
-  const pic = document.querySelector("#pet-pic").value.trim();
-  console.log("PICTUREEEEEE", pic);
+  // const pic = document.querySelector("#pet-pic").value.trim();
+  // console.log("PICTUREEEEEE", pic);
 
   if (
     name &&
@@ -41,13 +41,13 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      //   document.location.replace("/profile");
+      document.location.replace("/profile");
     } else {
-      alert("Failed to log in");
+      alert("Failed to Create New Pet");
     }
   }
 };
 
 document
   .querySelector("#pet-submit")
-  .addEventListener("submit", loginFormHandler);
+  .addEventListener("submit", createPetFormHandler);
