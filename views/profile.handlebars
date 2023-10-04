@@ -16,7 +16,7 @@
     <p class="menu-label">
      <a href="/createpet"> Add new pet</a>
     </p>
-    <p class="menu-label"><a>New Post</a></p>
+    <button onclick="showNewPost()" style="none" id="showNewPostButton" class="menu-label">New Post</button>
     
   </aside>
 
@@ -43,9 +43,10 @@
  
   
 </div>
-{{>newpost}}
+<div id="newPostEl" display="none">{{>newpost}}</div>
  <section class="flex-row justify-center">
     {{#each posts as |post|}}
     {{> post-details}}
     {{/each}}
   </section>
+  <script src="/js/hideCreate.js"></script>
