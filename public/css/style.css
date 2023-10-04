@@ -7,6 +7,10 @@ h1 {
   color: darkblue;
 }
 
+body {
+  min-width: 535px;
+}
+
 header {
   padding: 1em;
   border-bottom: rgb(168, 74, 173) 2px solid;
@@ -65,11 +69,34 @@ header {
   flex: none;
 }
 
+@media screen and (max-width: 769px) {
+  .post-content {
+    flex: none;
+    align-content: center;
+    top: -25px;
+    max-width: 100%;
+    align-self: center;
+  }
+  .card-text-column {
+    position: relative;
+    top: -25px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .post-content {
+    max-width: 75%;
+  }
+}
+
 .post-content {
   position: relative;
   top: 20%;
   background-color: antiquewhite;
-  width: 75%;
+}
+
+.card-text-column {
+  min-width: 25%;
 }
 
 .card {
