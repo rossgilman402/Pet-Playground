@@ -46,6 +46,7 @@ header {
   margin: 0;
   width: 407px;
   height: 407px;
+  left: 25px;
 }
 
 .column.card-image-column {
@@ -55,5 +56,11 @@ header {
 .post-content {
   position: relative;
   top: 20%;
-  left: 0;
+  /* right: 25px; */
+  background-color: antiquewhite;
+  width: 75%;
+}
+
+.card {
+  box-shadow: none;
 }
