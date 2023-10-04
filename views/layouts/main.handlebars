@@ -20,9 +20,15 @@
            <a href="#">
             <li>Dashboard</li>
           </a>
-           <a href="#">
+          {{#if loggedIn}}
+           <a href="#" id="logout">
+            <li>Logout</li>
+          </a>
+          {{else}}
+          <a href="#" id="login">
             <li>Login</li>
           </a>
+          {{/if}}
         </ul>
       </nav>
 

@@ -8,6 +8,8 @@ router.post("/", withAuth, async (req, res) => {
     const petData = await Pet.create({
       bio: req.body.bio,
       age: req.body.age,
+      name: req.body.name,
+      username: req.body.username,
       gender: req.body.gender,
       birthday: req.body.birthday,
       favorite_food: req.body.favorite_food,
