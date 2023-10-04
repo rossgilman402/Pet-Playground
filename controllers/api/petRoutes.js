@@ -5,7 +5,6 @@ const withAuth = require("../../utils/auth");
 //POST /api/pets/
 router.post("/", withAuth, async (req, res) => {
   try {
-    console.log("USERIDDDDDDD" + req.session.userId);
     const petData = await Pet.create({
       bio: req.body.bio,
       age: req.body.age,
@@ -20,6 +19,7 @@ router.post("/", withAuth, async (req, res) => {
       user_id: req.session.userId,
     });
 
+    // req.session.pet_id = petData.id;
     res.status(200).json(petData);
   } catch (err) {
     console.log(err);
