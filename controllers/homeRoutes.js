@@ -21,8 +21,25 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+//Route for profile button to select random pet
+router.get("/profile/", withAuth, async (req, res) => {
+  try {
+    const petData = await Pet.findAll({
+      where: {
+        user_id: req.session.userId,
+      },
+    });
+
+    const pets = petData.map((pet) => pet.get({ plain: true }));
+    const currentPet = pets[0];
+    res.redirect("profile/" + currentPet.name);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //Route for the pet profile pages
-// GET /profile
+// GET /profile/name
 router.get("/profile/:name", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({
