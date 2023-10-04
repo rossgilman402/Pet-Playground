@@ -44,4 +44,16 @@ header {
 .card-image {
   padding: 0;
   margin: 0;
+  width: 407px;
+  height: 407px;
+}
+
+.column.card-image-column {
+  flex: none;
+}
+
+.post-content {
+  position: relative;
+  top: 20%;
+  left: 0;
 }
