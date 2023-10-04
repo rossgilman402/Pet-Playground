@@ -33,3 +33,11 @@ header {
   color: black;
   padding: 0.5em;
 }
+
+.post-img {
+  /* make mobile img size max */
+  /* make img responsive */
+  width: 407px;
+  height: 407px;
+  flex-shrink: 0;
+}
