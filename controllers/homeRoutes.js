@@ -40,6 +40,7 @@ router.get("/profile/:name", withAuth, async (req, res) => {
     });
 
     const pets = petData.map((pet) => pet.get({ plain: true }));
+    console.log("pet", pets);
     const posts = postData.map((post) => post.get({ plain: true }));
     const currentPet = pets.filter((pet) => pet.name === req.params.name)[0];
     res.render("profile", {

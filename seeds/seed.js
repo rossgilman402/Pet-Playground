@@ -8,15 +8,18 @@ const petData = require("./Pet.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  for (const userDataItem of userData) {
+    await User.create(userDataItem);
+  }
+  // const users = await User.bulkCreate(userData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
   for (const pet of petData) {
     await Pet.create({
       ...pet,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      user_id: 1,
     });
   }
 

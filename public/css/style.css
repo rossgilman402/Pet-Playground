@@ -34,6 +34,18 @@ header {
   padding: 0.5em;
 }
 
+.sidebar {
+  height: 100%;
+  width: 150px;
+  left: 0;
+  top: 0;
+  background-color: gray;
+}
+
+.profileBody {
+  margin-left: 155px;
+}
+
 .post-img {
   width: 407px;
   height: 407px;
