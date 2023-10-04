@@ -1,36 +1,38 @@
 <div class="row align-center mb-5">
   <div class="col-md-6">
     <div class="card">
-      <div class="card-image">
-        <figure class="image post-img">
-          <img
-            src="../../public/images/post-placeholder.jpeg"
-            alt="Placeholder image"
-          />
-        </figure>
-      </div>
-      <div class="card-content is-align-items-flex-start">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-16x16x">
-              <img class="is-rounded" src={{pet_pic}} alt="Placeholder image" />
+      <div class="columns">
+        <div class="column">
+          <div class="card-image">
+            <figure class="image post-img">
+              <img
+                src="../../public/images/post-placeholder.jpeg"
+                alt="Placeholder image"
+              />
             </figure>
           </div>
-          <div class="media-content">
-            <p class="title is-4">{{name}}name</p>
-            <p class="subtitle is-6">@username</p>
-            <h2>{{title}}</h2>
+        </div>
+        <div class="column">
+          <div class="card-content is-align-items-flex-start post-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-16x16x">
+                  <img
+                    class="is-rounded"
+                    src={{pet_pic}}
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">{{name}}name</p>
+                <p class="subtitle is-6">@username</p>
+                <h2>{{title}}</h2>
+                <h3>{{caption}}</h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-6 content m-4 pb-3">
-        {{caption}}
-        {{! <a>@bulmaio</a>. }}
-        {{! <a href="#">#css</a>
-        <a href="#">#responsive</a> }}
-        <br />
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
       </div>
     </div>
   </div>
