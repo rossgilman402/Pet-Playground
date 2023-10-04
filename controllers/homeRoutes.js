@@ -22,7 +22,7 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 //Route for profile button to select random pet
-router.get("/profile/", withAuth, async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({
       where: {
@@ -87,6 +87,15 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
+});
+
+//GET /createPet
+router.get("/createpet", withAuth, async (req, res) => {
+  try {
+    res.render("createpet", { loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

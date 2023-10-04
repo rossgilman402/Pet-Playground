@@ -41,7 +41,6 @@ Pet.init(
     },
     pet_pic: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     pet_type: {
       type: DataTypes.STRING,
