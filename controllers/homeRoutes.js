@@ -23,7 +23,7 @@ router.get("/", withAuth, async (req, res) => {
 
 //Route for the pet profile pages
 // GET /profile
-router.get("/profile", withAuth, async (req, res) => {
+router.get("/profile/:name", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({
       where: {
@@ -41,9 +41,11 @@ router.get("/profile", withAuth, async (req, res) => {
 
     const pets = petData.map((pet) => pet.get({ plain: true }));
     const posts = postData.map((post) => post.get({ plain: true }));
+    const currentPet = pets.filter((pet) => pet.name === req.params.name)[0];
     res.render("profile", {
       posts,
       pets,
+      currentPet,
       // Pass the logged in flag to the template
       loggedIn: req.session.loggedIn,
     });
