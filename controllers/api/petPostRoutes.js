@@ -5,6 +5,7 @@ const withAuth = require("../../utils/auth");
 //api/pet-post/
 
 //Create Post
+//POST //api/pet-post/
 router.post("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.create({
@@ -21,7 +22,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-//Get all Post
+//GET //api/pet-post/
 router.get("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({});
@@ -35,7 +36,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-//Remove Post
+//DELETE //api/pet-post/id
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const post = Post.destroy({
@@ -50,7 +51,7 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-//Update Post
+//POST //api/pet-post/id
 router.post("/:id", withAuth, async (req, res) => {
   try {
     const post = Post.update(
@@ -69,7 +70,7 @@ router.post("/:id", withAuth, async (req, res) => {
   }
 });
 
-//Get posts from pet
+//GET /api/pet-post/id
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({

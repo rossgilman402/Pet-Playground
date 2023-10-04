@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Pet } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//Create Pet
+//POST /api/pets/
 router.post("/", withAuth, async (req, res) => {
   try {
     const petData = await Pet.create({
@@ -26,7 +26,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-//Get all pets
+//GET /api/pets/
 router.get("/", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({});
@@ -40,7 +40,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-//Remove Pet
+///DELETE /api/pets/id
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const pet = Pet.destroy({
@@ -55,7 +55,7 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-//Update Pet
+//POST /api/pets/id
 router.post("/:id", withAuth, async (req, res) => {
   try {
     const pet = Pet.update(
@@ -76,7 +76,7 @@ router.post("/:id", withAuth, async (req, res) => {
   }
 });
 
-//Get pets from user
+//GET /api/pets/
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({
