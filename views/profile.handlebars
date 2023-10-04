@@ -1,0 +1,32 @@
+<div class="sidebar">
+   <a><p>Add a new pet</p></a> 
+   <p>Current Pets</p>
+<ul>
+    <li>{{name}}</li>
+</ul>
+</div>
+
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{pet_pic}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{name}}, {{age}}</p>
+        <p class="subtitle is-6">@{{username}}</p>
+      </div>
+    </div>
+    <div class="content">
+    {{bio}} 
+    </div>
+  </div>
+</div>
+
+ <section class="flex-row justify-center">
+    {{#each posts as |post|}}
+    {{> post-details}}
+    {{/each}}
+  </section>
