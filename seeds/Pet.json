@@ -1,5 +1,7 @@
 [
   {
+    "name": "Bailey",
+    "username": "GoldenGuy75",
     "bio": "Young golden retriever who loves long walks on the beach and tennis balls!",
     "age": "5 months",
     "gender": "boy",
@@ -10,6 +12,8 @@
     "favorite_toy": "Tennis Ballls"
   },
   {
+    "name": "Boots",
+    "username": "MouseChaser123",
     "bio": "Shy but cuddly loves to nap in the sun and chase flies around the house",
     "age": "7 year",
     "gender": "Girl",

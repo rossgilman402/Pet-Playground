@@ -1,6 +1,7 @@
 <div class="row justify-space-between-md">
   <div class="login-card">
-    <h2 id="loginText" class="page-title">Login to PetPlayground!</h2>    <form id="form-submit">
+    <h2 id="loginText" class="page-title">Login to PetPlayground!</h2>   
+     <form id="form-submit">
     <div class="field" >
   <p class="control has-icons-left has-icons-right">
         <input class="input" type="email" placeholder="Email" id="email-login">
@@ -29,24 +30,41 @@
       </div>
     </form>
   </div>
-  <div class="login-card">
-    <h2 class="page-title">Signup</h2>
+  <div class="signup-card">
+    <h2 id="signupText" class="page-title">Signup To PetPlayground</h2>
     <form class="form signup-form" id="form-signup">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
+      <div class="field">
+        {{!-- <label for="username-signup">Username:</label> --}}
+        <p>
+        <input class="input is-medium" type="text" placeholder="Username" >
+        </p>
       </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+      <div class="field" >
+  <p class="control has-icons-left has-icons-right">
+        <input class="input" type="email" placeholder="Email" id="email-signup">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+        </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </p>
     </div>
+      <div class="field">
+      <p class="control has-icons-left">
+        <input class="input" type="password" placeholder="Password" id="password-signup">
+    <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
+  </p>
+    </div>
+      <div class="field">
+  <p class="control">
+        <button class="button is-success " type="submit">
+      Signup
+    </button>
+  </p>
+      </div>
     </form>
   </div>
 </div>
