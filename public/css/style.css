@@ -83,6 +83,17 @@ header {
 #newPostEl {
   display: none;
 }
+.menu-label {
+  font-size: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+#showNewPostButton:hover {
+  color: black;
+}
 @media screen and (max-width: 769px) {
   .post-content {
     flex: none;
