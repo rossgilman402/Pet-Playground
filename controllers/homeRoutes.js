@@ -7,9 +7,12 @@ const withAuth = require("../utils/auth");
 //GET /
 router.get("/", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({});
+    const postData = await Post.findAll({
+      include: [{ model: Pet }],
+    });
 
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts);
 
     res.render("homepage", {
       posts,
@@ -47,6 +50,7 @@ router.get("/profile/:username", withAuth, async (req, res) => {
         user_id: req.session.userId,
       },
     });
+
     const pets = petData.map((pet) => pet.get({ plain: true }));
     const currentPet = pets.filter(
       (pet) => pet.username === req.params.username
@@ -96,3 +100,5 @@ router.get("/createpet", withAuth, async (req, res) => {
 });
 
 module.exports = router;
+
+//GET

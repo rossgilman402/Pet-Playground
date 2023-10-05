@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { Post, Pet } = require("../../models");
 const withAuth = require("../../utils/auth");
 const upload = require("../../multerSetup");
 
@@ -13,14 +13,23 @@ router.post("/", upload.single("image"), withAuth, async (req, res) => {
     console.log("BODDYYY", req.body);
     const imagePath = "/images/uploads/" + req.file.filename;
 
+    console.log("req.session.petId", req.session.petId);
+
     const postData = await Post.create({
       title: req.body.title,
       caption: req.body.caption,
       picture: imagePath,
       pet_id: req.session.petId,
     });
+    // const petUserName = location.href.substring(
+    //   location.href.lastIndexOf("/") + 1
+    // );
 
-    res.status(200).redirect("/profile");
+    const pet = await Pet.findByPk(postData.pet_id);
+    const petUserName = pet.username;
+
+    console.log("USERNAMEEEE", petUserName);
+    res.status(200).redirect(`/profile/${petUserName}`);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -4,6 +4,13 @@
 //   const title = document.querySelector("#title").value.trim();
 //   const caption = document.querySelector("#caption").value.trim();
 //   //   const picture = document.querySelector("#pet-pic").value.trim();
+//   const title = document.querySelector("#title").value.trim();
+//   const caption = document.querySelector("#caption").value.trim();
+//   const petUserName = location.href.substring(
+//     location.href.lastIndexOf("/") + 1
+//   );
+//   console.log(petUserName);
+//   const picture = document.querySelector("#pet-pic").value.trim();
 
 //   if (
 //     title &&
@@ -24,6 +31,13 @@
 
 //     if (response.ok) {
 //       document.location.replace("/profile");
+//     } else {
+//       alert("Failed to Create new Post");
+//     }
+//   }
+// };
+//     if (response.ok) {
+//       document.location.replace(`/profile/${petUserName}`);
 //     } else {
 //       alert("Failed to Create new Post");
 //     }
