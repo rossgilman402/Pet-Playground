@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post, User, Pet } = require("../models");
 const { Op } = require("sequelize");
 const withAuth = require("../utils/auth");
+const upload = require("../multerSetup");
 
 // Prevent non logged in users from viewing the homepage
 //GET /
