@@ -6,12 +6,14 @@ const withAuth = require("../../utils/auth");
 
 //Create Post
 //POST //api/pet-post/
-router.post("/", withAuth, async (req, res) => {
+router.post("/", upload.single("image"), withAuth, async (req, res) => {
   try {
+    const imagePath = "/images/uploads/" + req.file.filename;
+
     const postData = await Post.create({
       title: req.body.title,
       caption: req.body.caption,
-      picture: req.body.picture,
+      picture: imagePath,
       pet_id: req.session.petId,
     });
 
