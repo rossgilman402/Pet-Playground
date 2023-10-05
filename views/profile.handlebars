@@ -67,17 +67,17 @@
                 <figure class="image is-16x16x">
                   <img
                     class="is-rounded"
-                    src={{post.pet_pic}}
+                    src={{pet_pic}}
                     alt="Placeholder image"
                   />
                 </figure>
               </div>
               <div class="media-content">
-                <p class="title is-4">{{currentPet.name}}</p>
-                <p class="subtitle is-6">@{{currentPet.username}}</p>
-                <h2><strong>{{post.title}}</strong></h2>
+                <p class="title is-4">{{../currentPet.name}}</p>
+                <p class="subtitle is-6">@{{../currentPet.username}}</p>
+                <h2><strong>{{title}}</strong></h2>
                 <br />
-                <h3>{{post.caption}}</h3>
+                <h3>{{caption}}</h3>
               </div>
             </div>
           </div>
@@ -86,7 +86,6 @@
     </div>
   </div>
 </div>
-
 
     {{/each}}
   </section>
