@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
+const upload = require("../../server").upload;
 
 //api/pet-post/
 
