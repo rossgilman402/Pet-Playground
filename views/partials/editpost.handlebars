@@ -3,16 +3,17 @@
 <div class="field">
   <label class="label">Title</label>
   <div class="control">
-    <input id="title" class="input" type="text" placeholder="Title" value="{{title}}">
+    <input id="title{{id}}" class="input" type="text" placeholder="Title" value="{{title}}">
   </div>
 </div>
 <div class="field">
   <label class="label">Caption</label>
   <div class="control">
-      <input id="caption" class="input" type="text" placeholder="Caption" value="{{caption}}">
+      <input id="caption{{id}}" class="input" type="text" placeholder="Caption" value="{{caption}}">
   </div>
 </div>
  <div class="control">
-    <button action="submit"  class="button is-link">Update</button>
+    <button action="submit"  class="button editSubmitBtn is-link" data-postId={{id}}>Update</button>
   </div>
 </form>
+  <script src="/js/editPost.js"></script>
