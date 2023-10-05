@@ -7,9 +7,12 @@ const withAuth = require("../utils/auth");
 //GET /
 router.get("/", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({});
+    const postData = await Post.findAll({
+      include: [{ model: Pet }],
+    });
 
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts);
 
     res.render("homepage", {
       posts,
