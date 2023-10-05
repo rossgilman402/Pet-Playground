@@ -21,9 +21,6 @@ router.post("/", upload.single("image"), withAuth, async (req, res) => {
       picture: imagePath,
       pet_id: req.session.petId,
     });
-    // const petUserName = location.href.substring(
-    //   location.href.lastIndexOf("/") + 1
-    // );
 
     const pet = await Pet.findByPk(postData.pet_id);
     const petUserName = pet.username;
