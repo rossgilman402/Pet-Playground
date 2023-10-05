@@ -47,6 +47,7 @@ router.get("/profile/:username", withAuth, async (req, res) => {
         user_id: req.session.userId,
       },
     });
+
     const pets = petData.map((pet) => pet.get({ plain: true }));
     const currentPet = pets.filter(
       (pet) => pet.username === req.params.username
@@ -96,3 +97,5 @@ router.get("/createpet", withAuth, async (req, res) => {
 });
 
 module.exports = router;
+
+//GET

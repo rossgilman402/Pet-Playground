@@ -46,7 +46,48 @@
 <div id="newPostEl" display="none">{{>newpost}}</div>
  <section class="flex-row justify-center">
     {{#each posts as |post|}}
-    {{> post-details}}
+    <div class="row align-center mb-5">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="columns">
+        <div class="column card-image-column">
+          <div class="card-image">
+            <figure class="image post-img">
+              <img
+                src="../../public/images/post-placeholder.jpeg"
+                alt="Placeholder image"
+              />
+            </figure>
+          </div>
+        </div>
+        <div class="column card-text-column">
+          <div class="card-content is-align-items-flex-start post-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-16x16x">
+                  <img
+                    class="is-rounded"
+                    src={{post.pet_pic}}
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">{{currentPet.name}}</p>
+                <p class="subtitle is-6">@{{currentPet.username}}</p>
+                <h2><strong>{{post.title}}</strong></h2>
+                <br />
+                <h3>{{post.caption}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     {{/each}}
   </section>
   <script src="/js/hideCreate.js"></script>
