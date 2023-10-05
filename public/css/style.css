@@ -119,4 +119,5 @@ header {
 
 #commentBox {
   border: solid;
+  border-radius: 20px;
 }
