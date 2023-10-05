@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User, Pet } = require("../models");
+const { Post, User, Pet, Comment } = require("../models");
 const { Op } = require("sequelize");
 const withAuth = require("../utils/auth");
 
@@ -8,11 +8,11 @@ const withAuth = require("../utils/auth");
 router.get("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [{ model: Pet }],
+      include: [{ model: Pet }, { model: Comment, include: [{ model: Pet }] }],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);
+    console.log(posts[0].comments[0]);
 
     res.render("homepage", {
       posts,
