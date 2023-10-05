@@ -32,7 +32,7 @@
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">{{currentPet.name}} , {{currentPet.age}} years old</p>
+        <p class="title is-4">{{currentPet.name}} , {{calculateBday currentPet.birthday}}</p>
         <p class="subtitle is-6">@{{currentPet.username}}</p>
       </div>
     </div>
@@ -54,8 +54,8 @@
           <div class="card-image">
             <figure class="image post-img">
               <img
-                src="../../public/images/post-placeholder.jpeg"
-                alt="Placeholder image"
+                src="{{picture}}"
+                alt="Post image"
               />
             </figure>
           </div>
@@ -81,10 +81,10 @@
                 <br />
                 <div class="field is-grouped">
   <div class="control">
-    <button class="button edit is-light" data-id="{{id}}">Edit</button>
+    <button id="edit-button" class="button edit is-light" data-id={{id}}>Edit</button>
   </div>
   <div class="control">
-    <button class="button delete is-link is-danger" data-id="{{id}}">Delete</button>
+    <button id="delete-button" class="button delete is-link is-danger" data-id={{id}}>Delete</button>
   </div>
               </div>
             </div>
@@ -97,4 +97,6 @@
 
     {{/each}}
   </section>
+  <script src="/js/deletePost.js"></script>
+  <script src="/js/editPost.js"></script>
   <script src="/js/hideCreate.js"></script>
