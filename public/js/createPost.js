@@ -3,6 +3,10 @@ const createPostFormHandler = async (event) => {
 
   const title = document.querySelector("#title").value.trim();
   const caption = document.querySelector("#caption").value.trim();
+  const petUserName = location.href.substring(
+    location.href.lastIndexOf("/") + 1
+  );
+  //   console.log(petUserName);
   //   const picture = document.querySelector("#pet-pic").value.trim();
 
   if (
@@ -23,7 +27,7 @@ const createPostFormHandler = async (event) => {
     console.log(response);
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace(`/profile/${petUserName}`);
     } else {
       alert("Failed to Create new Post");
     }
