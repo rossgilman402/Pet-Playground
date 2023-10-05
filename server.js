@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 // multer upload
-app.post("/upload", upload.single("file"), (req, res) => {
+app.post("/upload", upload.single("image"), (req, res) => {
   console.log(req.file);
   res.send("file uploaded");
 });
