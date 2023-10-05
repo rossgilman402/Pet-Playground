@@ -20,7 +20,7 @@ router.post("/", upload.single("image"), withAuth, async (req, res) => {
       pet_id: req.session.petId,
     });
 
-    res.status(200).json(postData);
+    res.status(200).redirect("/profile");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
