@@ -5,6 +5,8 @@ const path = require("path");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 
 const sequelize = require("./config/connection.js");
 
@@ -36,6 +38,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
+
+// multer upload
+app.post("/upload", upload.single("file"), (req, res) => {
+  console.log(req.file);
+  res.send("file uploaded");
+});
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
