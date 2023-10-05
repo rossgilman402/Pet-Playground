@@ -9,8 +9,6 @@ const upload = require("../../multerSetup");
 //POST //api/pet-post/
 router.post("/", upload.single("image"), withAuth, async (req, res) => {
   try {
-    console.log("FILEEEE", req.file);
-    console.log("BODDYYY", req.body);
     const imagePath = "/images/uploads/" + req.file.filename;
 
     console.log("req.session.petId", req.session.petId);
@@ -25,7 +23,6 @@ router.post("/", upload.single("image"), withAuth, async (req, res) => {
     const pet = await Pet.findByPk(postData.pet_id);
     const petUserName = pet.username;
 
-    console.log("USERNAMEEEE", petUserName);
     res.status(200).redirect(`/profile/${petUserName}`);
   } catch (err) {
     console.log(err);
