@@ -58,3 +58,5 @@ app.post("/upload", upload.single("image"), (req, res) => {
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
+
+module.exports.upload = upload;
