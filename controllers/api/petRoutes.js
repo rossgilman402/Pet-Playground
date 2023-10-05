@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Pet } = require("../../models");
 const withAuth = require("../../utils/auth");
+const upload = require("../../multerSetup");
 
 //POST /api/pets/
 router.post("/", withAuth, async (req, res) => {
