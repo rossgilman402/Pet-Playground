@@ -81,10 +81,10 @@
                 <br />
                 <div class="field is-grouped">
   <div class="control">
-    <button class="button edit is-light" data-id="{{id}}">Edit</button>
+    <button id="edit-button" class="button edit is-light" data-id={{id}}>Edit</button>
   </div>
   <div class="control">
-    <button class="button delete is-link is-danger" data-id="{{id}}">Delete</button>
+    <button id="delete-button" class="button delete is-link is-danger" data-id={{id}}>Delete</button>
   </div>
               </div>
             </div>
@@ -97,4 +97,6 @@
 
     {{/each}}
   </section>
+  <script src="/js/deletePost.js"></script>
+  <script src="/js/editPost.js"></script>
   <script src="/js/hideCreate.js"></script>
