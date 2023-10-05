@@ -117,3 +117,6 @@ header {
   box-shadow: none;
 }
 
+#commentBox {
+  border: solid;
+}
