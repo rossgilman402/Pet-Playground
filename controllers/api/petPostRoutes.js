@@ -1,21 +1,29 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { Post, Pet } = require("../../models");
 const withAuth = require("../../utils/auth");
+const upload = require("../../multerSetup");
 
 //api/pet-post/
 
 //Create Post
 //POST //api/pet-post/
-router.post("/", withAuth, async (req, res) => {
+router.post("/", upload.single("image"), withAuth, async (req, res) => {
   try {
+    const imagePath = "/images/uploads/" + req.file.filename;
+
+    console.log("req.session.petId", req.session.petId);
+
     const postData = await Post.create({
       title: req.body.title,
       caption: req.body.caption,
-      picture: req.body.picture,
+      picture: imagePath,
       pet_id: req.session.petId,
     });
 
-    res.status(200).json(postData);
+    const pet = await Pet.findByPk(postData.pet_id);
+    const petUserName = pet.username;
+
+    res.status(200).redirect(`/profile/${petUserName}`);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
