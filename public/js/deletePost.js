@@ -22,4 +22,4 @@ const deletePostFormHandler = async (event) => {
 
 document
   .querySelector("#newPostForm")
-  .addEventListener("submit", createPostFormHandler);
+  .addEventListener("submit", deletePostFormHandler);
