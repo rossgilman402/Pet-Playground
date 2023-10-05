@@ -5,18 +5,6 @@ const path = require("path");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");
-const multer = require("multer");
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/images/uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
-
-const upload = multer({ storage: storage });
 
 const sequelize = require("./config/connection.js");
 
@@ -49,14 +37,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-// multer upload
-app.post("/upload", upload.single("image"), (req, res) => {
-  console.log(req.file);
-  res.send("file uploaded");
-});
-
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
-
-module.exports.upload = upload;
