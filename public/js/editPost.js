@@ -26,7 +26,7 @@ const editPostFormHandler = async (event) => {
     alert("Failed to edit new Post");
   }
 };
-
-document
-  .querySelector("#delete-button")
-  .addEventListener("click", editPostFormHandler);
+const submitEditBtns = document.querySelectorAll(".editSubmitBtn");
+for (const submitEditBtn of submitEditBtn) {
+  submitEditBtn.addEventListener("click", editPostFormHandler);
+}
