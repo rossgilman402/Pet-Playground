@@ -1,12 +1,14 @@
 const router = require("express").Router();
 const { Pet } = require("../../models");
 const withAuth = require("../../utils/auth");
-const upload = require("../../multerSetup");
+const { uploadPets } = require("../../multerSetup");
 
 //POST /api/pets/
-router.post("/", upload.single("pet_pic"), withAuth, async (req, res) => {
+router.post("/", uploadPets.single("pet_pic"), withAuth, async (req, res) => {
   try {
-    pet_picPath = "/images/pet_pics/" + req.file.filename;
+    console.log("req.file", req.file);
+    console.log("req.body", req.body);
+    const pet_picPath = "/images/pet_pics/" + req.file.filename;
 
     const petData = await Pet.create({
       bio: req.body.bio,
