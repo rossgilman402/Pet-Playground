@@ -1,9 +1,9 @@
 const likeHandler = async (event) => {
-  event.preventDefault();
+  //event.preventDefault();
   const likeBtn = event.target;
   const likeDisplay = likeBtn.parentElement.lastElementChild;
   let { id, likes: likeCount } = event.target.dataset;
-
+  console.log("like buttons?");
   //   this is if the comment is unliked currently then a click will like and update like
   if (likeBtn.getAttribute("style") === "background-color:white;") {
     likeBtn.setAttribute("style", "background-color:black;");
