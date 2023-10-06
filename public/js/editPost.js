@@ -10,7 +10,7 @@ const editPostFormHandler = async (event) => {
   );
 
   const response = await fetch(`/api/pet-post/${postid}`, {
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify({
       title,
       caption,

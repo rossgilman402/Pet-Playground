@@ -100,6 +100,10 @@ a {
   color: black;
 }
 
+/* Style for like button */
+/* Switch Slide
+==========================*/
+
 #logoStyle {
   display: flex;
   flex-direction: row;
