@@ -14,7 +14,6 @@ const editPostFormHandler = async (event) => {
     body: JSON.stringify({
       title,
       caption,
-      // picture,
     }),
     headers: { "Content-Type": "application/json" },
   });
@@ -24,7 +23,7 @@ const editPostFormHandler = async (event) => {
   if (response.ok) {
     document.location.replace(`/profile/${petUserName}`);
   } else {
-    alert("Failed to edit new Post");
+    alert("Failed to edit Post");
   }
 };
 const submitEditBtns = document.querySelectorAll(".editSubmitBtn");

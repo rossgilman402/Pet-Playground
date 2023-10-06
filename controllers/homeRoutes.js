@@ -4,7 +4,6 @@ const { Op } = require("sequelize");
 const withAuth = require("../utils/auth");
 const upload = require("../multerSetup");
 
-// Prevent non logged in users from viewing the homepage
 //GET /
 router.get("/", withAuth, async (req, res) => {
   try {
@@ -13,7 +12,6 @@ router.get("/", withAuth, async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts[0].comments[0]);
 
     res.render("homepage", {
       posts,
@@ -101,5 +99,3 @@ router.get("/createpet", withAuth, async (req, res) => {
 });
 
 module.exports = router;
-
-//GET
