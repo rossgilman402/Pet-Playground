@@ -69,7 +69,9 @@
         </div>
         <div class="column card-text-column">
           <div class="card-content is-align-items-flex-start post-content">
+               <button id="delete-button" class="button delete-buttons delete is-link is-danger" style="float:right" data-id={{id}}>Delete</button>
             <div class="media">
+              
               <div class="media-left">
                 <figure class="image is-16x16x">
                   <img
@@ -81,7 +83,7 @@
               </div>
               <div class="media-content">
                  <div class="control">
-    <button id="delete-button" class="button delete-buttons delete is-link is-danger" style="float:right" data-id={{id}}>Delete</button>
+ 
   </div>
                 <p class="title is-4">{{../currentPet.name}}</p>
                 <p class="subtitle is-6">@{{../currentPet.username}}</p>
