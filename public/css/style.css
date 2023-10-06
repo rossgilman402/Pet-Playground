@@ -17,7 +17,7 @@ header {
   background: rgb(76, 185, 68);
   background: linear-gradient(
     0deg,
-    rgba(76, 185, 68, 1) 0%,
+    rgb(124, 124, 124) 0%,
     rgba(253, 255, 252, 1) 100%
   );
 }
@@ -26,6 +26,19 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+#navbarItems a {
+  color: #8c52ff;
+  font-weight: bolder;
+  border: #8c52ff 2px solid;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: #b4b4b4;
+}
+
+#navbarItems a:hover {
+  background-color: white;
 }
 .gallery {
   padding: 2em;
