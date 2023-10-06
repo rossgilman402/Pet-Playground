@@ -61,19 +61,11 @@ router.delete("/:id", withAuth, async (req, res) => {
 });
 
 //POST /api/pets/id
-router.post("/:id", withAuth, async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
-    const pet = Pet.update(
-      {
-        bio: req.body.bio,
-        favorite_food: req.body.favorite_food,
-        pet_pic: req.body.pet_pic,
-        favorite_toy: req.body.favorite_toy,
-      },
-      {
-        where: { id: req.params.id },
-      }
-    );
+    const pet = Pet.update(req.body, {
+      where: { id: req.params.id },
+    });
     res.status(200).json(pet);
   } catch (err) {
     console.log(err);

@@ -11,8 +11,6 @@ router.post("/", uploadPosts.single("image"), withAuth, async (req, res) => {
   try {
     const imagePath = "/images/uploads/" + req.file.filename;
 
-    console.log("req.session.petId", req.session.petId);
-
     const postData = await Post.create({
       title: req.body.title,
       caption: req.body.caption,
@@ -59,18 +57,12 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-//POST //api/pet-post/id
-router.post("/:id", withAuth, async (req, res) => {
+//PUT //api/pet-post/id
+router.put("/:id", withAuth, async (req, res) => {
   try {
-    const post = Post.update(
-      {
-        title: req.body.title,
-        caption: req.body.caption,
-      },
-      {
-        where: { id: req.params.id },
-      }
-    );
+    const post = Post.update(req.body, {
+      where: { id: req.params.id },
+    });
     res.status(200).json(post);
   } catch (err) {
     console.log(err);

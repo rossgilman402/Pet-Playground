@@ -100,6 +100,10 @@ a {
   color: black;
 }
 
+/* Style for like button */
+/* Switch Slide
+==========================*/
+
 #logoStyle {
   display: flex;
   flex-direction: row;
@@ -151,4 +155,10 @@ a {
 .image .is-rounded.pet-pic {
   width: 100px;
   height: 100px;
+}
+
+img {
+  max-height: 100%;
+  object-fit: cover;
+  transform: translate3d(0px, 0px, 0.1px);
 }
