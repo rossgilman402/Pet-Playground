@@ -12,7 +12,6 @@ This project application was built to get pet owners, and the pet loving communi
 - [Usage](#usage)
 - [License](#license)
 - [How To Contribute](#how-to-contribute)
-- [Tests](#tests)
 - [Questions](#questions)
 
 ## Installation
@@ -33,10 +32,6 @@ https://opensource.org/licenses/MIT
 ## How to Contribute
 
 To contribute please email me at the email provided below and I will provide steps for creating good issues or pull requests. I will also attached links to external documentations, mailing lists and code of conducts. There will be community and behavioral expectations.
-
-## Tests
-
-
 
 ## Questions
 
