@@ -27,7 +27,7 @@
                 <h2><strong>{{title}}</strong></h2>
                 <br />
                 <h3>{{caption}}</h3>
-              </div>
+              </div>              
             </div>
           </div>
         </div>
@@ -36,17 +36,6 @@
   </div>
 </div>
 <div id="commentBox">
-  <article class="media">
-   <div class="media-content">
-    <div class="content">
-      <ul id="commentList{{id}}">
-    {{#each comments as |comment|}}
-    <li>{{comment.pet.username}}: {{comment.comment}}</li>
-    {{/each}}
-      </ul>
-    </div>
-  </div>
-</article>
 <article class="media">
   <div class="media-content">
     <div class="field">
@@ -58,6 +47,20 @@
       <p class="control">
         <button id="comment-btn{{id}}" data-id={{id}} class="button commentButton">Post comment</button>
       </p>
+<button style="background-color:white;" data-id={{id}} data-likes={{likes}} class="like-button" id="likeButton{{id}}">❤️</button>
+<p>Likes: {{likes}}</p>
+</label>
+    </div>
+  </div>
+</article>
+ <article class="media">
+   <div class="media-content">
+    <div class="content">
+      <ul id="commentList{{id}}">
+    {{#each comments as |comment|}}
+    <li>{{comment.pet.username}}: {{comment.comment}}</li>
+    {{/each}}
+      </ul>
     </div>
   </div>
 </article>

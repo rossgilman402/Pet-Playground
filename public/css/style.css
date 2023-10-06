@@ -94,6 +94,11 @@ a {
 #showNewPostButton:hover {
   color: black;
 }
+
+/* Style for like button */
+/* Switch Slide
+==========================*/
+
 @media screen and (max-width: 769px) {
   .post-content {
     flex: none;
