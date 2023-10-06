@@ -1,4 +1,4 @@
-function likeFunction(event) {
+const likeHandler = async (event) => {
   event.preventDefault();
   const likeBtn = event.target;
   const likeDisplay = likeBtn.parentElement.lastElementChild;
@@ -10,21 +10,45 @@ function likeFunction(event) {
 
     likeCount++;
 
+    const response = await fetch(`/api/pet-post/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        likes: likeCount,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
     //fetch to update db if success then
-    likeBtn.setAttribute("data-likes", likeCount);
-    likeDisplay.textContent = "Likes: " + likeCount;
+    if (response.ok) {
+      likeBtn.setAttribute("data-likes", likeCount);
+      likeDisplay.textContent = "Likes: " + likeCount;
+    } else {
+      alert("Failed to like post");
+    }
   } else {
     likeBtn.setAttribute("style", "background-color:white;");
     likeCount--;
 
+    const response = await fetch(`/api/pet-post/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        likes: likeCount,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
     //fetch to update db if success then
-    likeBtn.setAttribute("data-likes", likeCount);
-    likeDisplay.textContent = "Likes: " + likeCount;
+    if (response.ok) {
+      likeBtn.setAttribute("data-likes", likeCount);
+      likeDisplay.textContent = "Likes: " + likeCount;
+    } else {
+      alert("Failed to like post");
+    }
   }
-}
+};
 
 const likeButtons = document.querySelectorAll(".like-button");
 
 for (const button of likeButtons) {
-  button.addEventListener("click", likeFunction);
+  button.addEventListener("click", likeHandler);
 }
