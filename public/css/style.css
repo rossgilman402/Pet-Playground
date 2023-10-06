@@ -1,6 +1,7 @@
 :root {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 h1 {
   text-align: center;
   font-size: 35px;
@@ -13,8 +14,12 @@ body {
 
 header {
   padding: 1em;
-  border-bottom: rgb(168, 74, 173) 2px solid;
-  background-color: antiquewhite;
+  background: rgb(76, 185, 68);
+  background: linear-gradient(
+    0deg,
+    rgba(76, 185, 68, 1) 0%,
+    rgba(253, 255, 252, 1) 100%
+  );
 }
 
 #navbarItems {
@@ -94,6 +99,16 @@ a {
 #showNewPostButton:hover {
   color: black;
 }
+
+#logoStyle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 @media screen and (max-width: 769px) {
   .post-content {
     flex: none;
