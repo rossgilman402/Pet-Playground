@@ -12,10 +12,10 @@ module.exports = {
     } else {
       const age =
         today.getFullYear() -
-        birthdate[2] -
-        (today.getMonth() < birthdate[0] ||
-          (today.getMonth() === birthdate[0] &&
-            today.getDate() < birthdate[1]));
+        birthdate[0] -
+        (today.getMonth() < birthdate[1] ||
+          (today.getMonth() === birthdate[1] &&
+            today.getDate() < birthdate[2]));
       return age + " years old";
     }
   },
