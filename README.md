@@ -35,7 +35,10 @@ To contribute please email me at the email provided below and I will provide ste
 
 ## Questions
 
-The following link is to my github acount:
+The following links are to our group members github acounts:
+(https://github.com/MaddyKm)
+(https://github.com/horton-michael)
+(https://github.com/rossgilman402)
 (https://github.com/fmquito45)
 
 And if you have any further questions I can be reached out in the following email:
