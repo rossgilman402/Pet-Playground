@@ -31,21 +31,25 @@
           <img src="{{pet_pic}}" alt="Placeholder image">
         </figure>
       </div>
+    
       <div class="media-content">
         <p class="title is-4">{{currentPet.name}} , {{calculateBday currentPet.birthday}}</p>
         <p class="subtitle is-6">@{{currentPet.username}}</p>
       </div>
+        <div class="control">
+    <button onclick="editPetForm()" id="editPet" class="button is-link is-light" style="float:right" >Edit Pet </button>
+  </div>
     </div>
     <div class="content">
     <p>{{currentPet.bio}} </p>
-
-    <p>Favorite Food: {{currentPet.favorite_food}} </p>
-    <p>Favorite Toy: {{currentPet.favorite_toy}}</p>
+    <p><strong>Favorite Food: </strong> {{currentPet.favorite_food}} </p>
+    <p><strong>Favorite Toy: </strong>{{currentPet.favorite_toy}}</p>
     </div>
   </div>
  
   
 </div>
+<div id="editPetEl" style="display:none">{{>editpet}}</div>
 <div id="newPostEl" style="display:none">{{>newpost}}</div>
  <section class="flex-row justify-center">
     {{#each posts as |post|}}
@@ -102,6 +106,6 @@
     {{/each}}
   </section>
   <script src="/js/deletePost.js"></script>
-
+<script src="/js/editPet.js"></script>
   <script src="/js/hideCreate.js"></script>
   <script src="/js/hideEdit.js"></script>
