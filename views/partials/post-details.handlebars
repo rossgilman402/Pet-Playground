@@ -12,6 +12,7 @@
         <div class="column card-text-column">
           <div class="card-content is-align-items-flex-start post-content">
             <div class="media">
+              <div class="postInfo">
               <div class="media-left">
                 <figure class="image is-16x16x">
                   <img
@@ -27,35 +28,32 @@
                 <h2><strong>{{title}}</strong></h2>
                 <br />
                 <h3>{{caption}}</h3>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="commentBox">
-<article class="media">
-  <div class="media-content">
+              </div>  
+              </div>
+              <div id="commentBox">
+<article class="media commentBody">
+  <div class="media-content" style="display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: flex-start;">
     <div class="field">
       <p class="control">
-        <input id="commentInput{{id}}" class="input is-medium" type="text" placeholder="Add your comment">
+        <input id="commentInput{{id}}"  class="input is-medium" type="text" placeholder="Add your comment">
       </p>
     </div>
-    <div class="field">
+    <div class="commentAndLike" class="field">
       <p class="control">
-        <button id="comment-btn{{id}}" data-id={{id}} class="button commentButton">Post comment</button>
+        <button style="margin:.25em"id="comment-btn{{id}}" data-id={{id}} class="button commentButton">Post comment</button>
       </p>
-<button style="background-color:white;" data-id={{id}} data-likes={{likes}} class="like-button" id="likeButton{{id}}">❤️</button>
-<p>Likes: {{likes}}</p>
+<button style="background-color:white; margin:.25em" data-id={{id}} data-likes={{likes}} class="like-button" id="likeButton{{id}}">❤️</button>
+<p style="margin:.25em">Likes: {{likes}}</p>
 </label>
     </div>
   </div>
 </article>
- <article class="media">
-   <div class="media-content">
-    <div class="content">
+ <article class="media" >
+   <div class="media-content" >
+    <div class="content" >
       <ul id="commentList{{id}}">
     {{#each comments as |comment|}}
     <li>{{comment.pet.username}}: {{comment.comment}}</li>
@@ -64,4 +62,12 @@
     </div>
   </div>
 </article>
+</div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

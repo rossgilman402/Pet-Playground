@@ -142,14 +142,18 @@ a {
 
 @media screen and (min-width: 769px) {
   .post-content {
-    max-width: 75%;
+    /* max-width: 75%; */
   }
 }
 
 .post-content {
   position: relative;
-  top: 20%;
-  background-color: antiquewhite;
+  /* top: 20%; */
+  background: linear-gradient(
+    0deg,
+    rgba(235, 235, 235, 1) 0%,
+    rgba(174, 114, 244, 1) 100%
+  );
 }
 
 .card-text-column {
@@ -161,8 +165,7 @@ a {
 }
 
 #commentBox {
-  border: solid;
-  border-radius: 20px;
+  width: 100%;
 }
 
 .image .is-rounded.pet-pic {
@@ -174,4 +177,29 @@ img {
   max-height: 100%;
   object-fit: cover;
   transform: translate3d(0px, 0px, 0.1px);
+}
+
+.media {
+  align-items: flex-start;
+  display: flex;
+  text-align: inherit;
+  flex-direction: column;
+}
+.postInfo {
+  display: flex;
+}
+
+.commentBody {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-end;
+}
+
+.commentAndLike {
+  display: flex;
+  justify-content: flex-start;
+}
+.row {
+  border-top: 2px gray solid;
 }
