@@ -22,7 +22,7 @@ Run MySql and input in command line, source schema.sql. Start the server with co
 
 ## Usage
 
-
+New users are directed to create a new login account. They are prompted to fill basic information on their pet and uplaod a picture. This will direct them to the profile page where user are able to create a post or add new pets. They can also check the home page of all post posted. In the homepage users are able to comment of existing posts.
 
 ## License
 
