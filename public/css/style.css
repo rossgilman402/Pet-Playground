@@ -164,3 +164,14 @@ a {
   border: solid;
   border-radius: 20px;
 }
+
+.image .is-rounded.pet-pic {
+  width: 100px;
+  height: 100px;
+}
+
+img {
+  max-height: 100%;
+  object-fit: cover;
+  transform: translate3d(0px, 0px, 0.1px);
+}

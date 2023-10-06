@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const { Post, Pet } = require("../../models");
 const withAuth = require("../../utils/auth");
-const upload = require("../../multerSetup");
+const { uploadPosts } = require("../../multerSetup");
 
 //api/pet-post/
 
 //Create Post
 //POST //api/pet-post/
-router.post("/", upload.single("image"), withAuth, async (req, res) => {
+router.post("/", uploadPosts.single("image"), withAuth, async (req, res) => {
   try {
     const imagePath = "/images/uploads/" + req.file.filename;
 

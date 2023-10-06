@@ -1,10 +1,10 @@
 <h2>Update your pet's information!</h2>
-<form id="pet-update" data-petId={{currentPet.id}}>
+<form id="pet-update" data-petId={{currentPet.id}} action="/api/pets/" method="POST" enctype="multipart/form-data">
 
 <div class="field">
   <label class="label">Username: </label>
   <div class="control has-icons-left has-icons-right">
-    <input id="updateusername" class="input is-success" type="text" value="{{currentPet.username}}">
+    <input id="updateusername" name="username" class="input is-success" type="text" value="{{currentPet.username}}">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -19,17 +19,17 @@
 <div class="field is-grouped">
     <label class="label">Favorite Food: </label>
   <div class="control">
-    <input id="updatefavorite-food" class="input" type="text" value="{{currentPet.favorite_food}}">
+    <input id="updatefavorite-food" name="favorite_food" class="input" type="text" value="{{currentPet.favorite_food}}">
   </div>
  <label class="label">Favorite Toy: </label>
   <div class="control">
-    <input id="updatefavorite-toy" class="input" type="text" value="{{currentPet.favorite_toy}}">
+    <input id="updatefavorite-toy" name="favorite_toy" class="input" type="text" value="{{currentPet.favorite_toy}}">
   </div>
 </div>
 <div class="field">
   <label class="label">Add a bio for your pet!</label>
   <div class="control">
-    <input id="updatebio" class="input" value="{{currentPet.bio}}"></input>
+    <input id="updatebio" name="bio" class="input" value="{{currentPet.bio}}"></input>
   </div>
 </div>
   <div class="control">

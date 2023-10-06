@@ -1,6 +1,6 @@
 const multer = require("multer");
 
-const storage = multer.diskStorage({
+const storagePosts = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/images/uploads/");
   },
@@ -9,6 +9,16 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const storagePets = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./public/images/pet_pics/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
 
-module.exports = upload;
+const uploadPosts = multer({ storage: storagePosts });
+const uploadPets = multer({ storage: storagePets });
+
+module.exports = { uploadPosts, uploadPets };
