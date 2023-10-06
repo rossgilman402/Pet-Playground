@@ -28,7 +28,7 @@
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img src="{{pet_pic}}" alt="Placeholder image">
+          <img src="{{currentPet.pet_pic}}" alt="Profile picture">
         </figure>
       </div>
     
@@ -73,9 +73,9 @@
               <div class="media-left">
                 <figure class="image is-16x16x">
                   <img
-                    class="is-rounded"
-                    src={{pet_pic}}
-                    alt="Placeholder image"
+                    class="is-rounded pet-pic"
+                    src="{{../currentPet.pet_pic}}"
+                    alt="Profile picture"
                   />
                 </figure>
               </div>

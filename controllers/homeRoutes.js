@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post, User, Pet, Comment } = require("../models");
 const { Op } = require("sequelize");
 const withAuth = require("../utils/auth");
+const upload = require("../multerSetup");
 
 //GET /
 router.get("/", withAuth, async (req, res) => {
