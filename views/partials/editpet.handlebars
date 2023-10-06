@@ -1,16 +1,16 @@
 <h2>Update your pet's information!</h2>
-<form id="pet-submit">
+<form id="pet-submit" action="/api/pets/" method="POST" enctype="multipart/form-data">
 <div class="field">
   <label class="label">Pet Name: </label>
   <div class="control">
-    <input id="name" class="input" type="text" value="{{currentPet.name}}">
+    <input id="name" name="name" class="input" type="text" value="{{currentPet.name}}">
   </div>
 </div>
 
 <div class="field">
   <label class="label">Username: </label>
   <div class="control has-icons-left has-icons-right">
-    <input id="username" class="input is-success" type="text" value="{{currentPet.username}}">
+    <input id="username" name="username" class="input is-success" type="text" value="{{currentPet.username}}">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -26,7 +26,7 @@
   <label class="label">Gender: </label>
   <div class="control">
     <div class="select">
-      <select id="gender">
+      <select id="gender" name="gender">
         <option>Male</option>
         <option>Female</option>
       </select>
@@ -34,38 +34,34 @@
   </div>
   <label class="label">Birthdate: </label>
   <div class="control">
-    <input id="birthday" class="input" type="date"  value="{{currentPet.birthday}}">
-  </div>
-  <label class="label">Age: </label>
-  <div class="control">
-    <input id="age" class="input" type="text" value="{{currentPet.age}}">
+    <input id="birthday" name="birthday" class="input" type="date"  value="{{currentPet.birthday}}">
   </div>
   <label class="label">Pet Type: </label>
   <div class="control">
-    <input id="pet-type" class="input" type="text" value="{{currentPet.pet_type}}">
+    <input id="pet-type" name="pet_type" class="input" type="text" value="{{currentPet.pet_type}}">
   </div>
 </div>
 
 <div class="field is-grouped">
     <label class="label">Favorite Food: </label>
   <div class="control">
-    <input id="favorite-food" class="input" type="text" value="{{currentPet.favorite_food}}">
+    <input id="favorite-food" name="favorite_food" class="input" type="text" value="{{currentPet.favorite_food}}">
   </div>
  <label class="label">Favorite Toy: </label>
   <div class="control">
-    <input id="favorite-toy" class="input" type="text" value="{{currentPet.favorite_toy}}">
+    <input id="favorite-toy" name="favorite_toy" class="input" type="text" value="{{currentPet.favorite_toy}}">
   </div>
 </div>
 <div class="field">
   <label class="label">Add a bio for your pet!</label>
   <div class="control">
-    <input id="bio" class="input" value="{{currentPet.bio}}"></input>
+    <input id="bio" name="bio" class="input" value="{{currentPet.bio}}"></input>
   </div>
 </div>
 <div class="field">
   <label class="label">Upload a profile picture</label>
   <div class="control">
-    <input id="pet-pic" class="input" type="file"  accept="image/png, image/jpeg" value="{{currentPet.pet_pic}}">
+    <input id="pet-pic" name="pet_pic" class="input" type="file"  accept="image/png, image/jpeg" value="{{currentPet.pet_pic}}">
   </div>
 </div>
   <div class="control">

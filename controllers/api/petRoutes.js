@@ -12,7 +12,6 @@ router.post("/", uploadPets.single("pet_pic"), withAuth, async (req, res) => {
 
     const petData = await Pet.create({
       bio: req.body.bio,
-      age: req.body.age,
       name: req.body.name,
       username: req.body.username,
       gender: req.body.gender,
