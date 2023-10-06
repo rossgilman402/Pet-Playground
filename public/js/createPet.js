@@ -10,8 +10,6 @@ const createPetFormHandler = async (event) => {
   const favorite_food = document.querySelector("#favorite-food").value.trim();
   const favorite_toy = document.querySelector("#favorite-toy").value.trim();
   const bio = document.querySelector("#bio").value.trim();
-  // const pic = document.querySelector("#pet-pic").value.trim();
-  // console.log("PICTUREEEEEE", pic);
 
   if (
     name &&
