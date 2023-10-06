@@ -17,7 +17,8 @@ This project application was built to get pet owners, and the pet loving communi
 
 ## Installation
 
-
+For future collaboraters, you'll need to install all pacakges with command line, npm i.
+Run MySql and input in command line, source schema.sql. Start the server with command line, node server.js.
 
 ## Usage
 
