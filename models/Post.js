@@ -24,6 +24,7 @@ Post.init(
     },
     likes: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     pet_id: {
       type: DataTypes.INTEGER,
