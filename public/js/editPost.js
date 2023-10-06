@@ -1,14 +1,15 @@
 const editPostFormHandler = async (event) => {
   event.preventDefault();
 
-  const id = document.getElementById("edit-button").getAttribute("data-id");
+  const postid = event.target.dataset.postid;
+  console.log(postid);
+  const title = document.querySelector(`#title${postid}`).value.trim();
+  const caption = document.querySelector(`#caption${postid}`).value.trim();
   const petUserName = location.href.substring(
     location.href.lastIndexOf("/") + 1
   );
-  const title = document.getElementById("title").value.trim();
-  const caption = document.getElementById("caption").value.trim();
 
-  const response = await fetch(`/api/pet-post/${id}`, {
+  const response = await fetch(`/api/pet-post/${postid}`, {
     method: "POST",
     body: JSON.stringify({
       title,
@@ -26,7 +27,7 @@ const editPostFormHandler = async (event) => {
     alert("Failed to edit new Post");
   }
 };
-
-document
-  .querySelector("#delete-button")
-  .addEventListener("click", editPostFormHandler);
+const submitEditBtns = document.querySelectorAll(".editSubmitBtn");
+for (const submitEditBtn of submitEditBtns) {
+  submitEditBtn.addEventListener("click", editPostFormHandler);
+}

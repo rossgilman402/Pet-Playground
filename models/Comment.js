@@ -22,6 +22,13 @@ Comment.init(
         key: "id",
       },
     },
+    pet_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "pet",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
