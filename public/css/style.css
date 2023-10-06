@@ -132,3 +132,8 @@ a {
   border: solid;
   border-radius: 20px;
 }
+
+.image .is-rounded.pet-pic {
+  width: 100px;
+  height: 100px;
+}
