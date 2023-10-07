@@ -20,6 +20,7 @@ router.post("/", uploadPosts.single("image"), withAuth, async (req, res) => {
     console.log("Pet ID", req.session.petId);
     console.log("User ID", req.session.userId);
     const pet = await Pet.findByPk(postData.pet_id);
+    console.log(postData.pet_id);
     const petUserName = pet.username;
 
     res.status(200).redirect(`/profile/${petUserName}`);
