@@ -59,11 +59,11 @@ router.get("/profile/:username", withAuth, async (req, res) => {
         pet_id: currentPet.id,
       },
     });
-
+    console.log("BEFORE: PET", currentPet.id);
     req.session.save(() => {
       req.session.petId = currentPet.id;
     });
-
+    console.log("AFTERR: PET", req.session.petId);
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("profile", {
