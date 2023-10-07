@@ -44,6 +44,7 @@ router.get("/profile", withAuth, async (req, res) => {
 // GET /profile/name
 router.get("/profile/:username", withAuth, async (req, res) => {
   try {
+    console.log("HERE===============================");
     const petData = await Pet.findAll({
       where: {
         user_id: req.session.userId,
