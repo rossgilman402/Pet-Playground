@@ -179,12 +179,12 @@ img {
   transform: translate3d(0px, 0px, 0.1px);
 }
 
-/* .media {
+.media {
   align-items: flex-start;
   display: flex;
   text-align: inherit;
   flex-direction: column;
-} */
+}
 .postInfo {
   display: flex;
 }
@@ -205,5 +205,6 @@ img {
 }
 
 #profileCard {
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
