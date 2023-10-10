@@ -25,14 +25,14 @@
 <div class="column">
 <div class="card" id="profileHeader" >
   <div class="card-content">
-    <div class="media">
+    <div class="media" id="profileCard" >
       <div class="media-left">
         <figure class="image is-16x16px">
           <img class="is-rounded pet-pic" src="{{currentPet.pet_pic}}" alt="Profile picture">
         </figure>
       </div>
     
-      <div class="media-content" id="profileCard">
+      <div class="media-content" >
         <p class="title is-4">{{currentPet.name}} , {{calculateBday currentPet.birthday}}</p>
         <p class="subtitle is-6">@{{currentPet.username}}</p>
       </div>
