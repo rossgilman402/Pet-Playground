@@ -23,6 +23,10 @@ Run MySql and input in command line, source schema.sql. Start the server with co
 
 New users are directed to create a new login account. They are prompted to fill basic information on their pet and uplaod a picture. This will direct them to the profile page where user are able to create a post or add new pets. They can also check the home page of all post posted. In the homepage users are able to comment of existing posts.
 
+![alt text](./assets/images/Screenshot%202023-10-10%20at%207.19.34%20PM.png)
+![alt text](./assets/images/Screenshot%202023-10-10%20at%207.20.45%20PM.png)
+![alt text](./assets/images/Screenshot%202023-10-09%20at%208.31.26%20PM.png)
+
 ## License
 
 MIT License
@@ -42,4 +46,8 @@ The following links are to our group members github acounts:
 (https://github.com/fmquito45)
 
 And if you have any further questions I can be reached out in the following email:
-fmquitox45@gmail.com
+(mmkasemichael@gmail.com)
+(michaelhorton722@gmail.com)
+(rossgilman402@gmail.com)
+(fmquitox45@gmail.com)
+
