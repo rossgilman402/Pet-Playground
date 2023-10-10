@@ -30,6 +30,7 @@ const sess = {
     db: sequelize,
   }),
 };
+sess.store.sync();
 app.use("/images", express.static(path.join(__dirname, "/public/images")));
 app.use(session(sess));
 
