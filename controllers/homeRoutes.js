@@ -44,6 +44,7 @@ router.get("/profile", withAuth, async (req, res) => {
 // GET /profile/name
 router.get("/profile/:username", withAuth, async (req, res) => {
   try {
+    console.log("HERE===============================");
     const petData = await Pet.findAll({
       where: {
         user_id: req.session.userId,
@@ -59,19 +60,20 @@ router.get("/profile/:username", withAuth, async (req, res) => {
         pet_id: currentPet.id,
       },
     });
-
+    console.log("BEFORE: PET", currentPet.id);
     req.session.save(() => {
       req.session.petId = currentPet.id;
-    });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
+      console.log("AFTERR: PET", req.session.petId);
+      const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render("profile", {
-      posts,
-      pets,
-      currentPet,
-      // Pass the logged in flag to the template
-      loggedIn: req.session.loggedIn,
+      res.render("profile", {
+        posts,
+        pets,
+        currentPet,
+        // Pass the logged in flag to the template
+        loggedIn: req.session.loggedIn,
+      });
     });
   } catch (err) {
     res.status(500).json(err);

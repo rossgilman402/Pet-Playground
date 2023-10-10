@@ -21,8 +21,8 @@ const sess = {
   cookie: {
     maxAge: 60 * 60 * 1000,
     httpOnly: true,
-    secure: false,
-    sameSite: "strict",
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    sameSite: process.env.NODE_ENV === "production" ? "lax" : "strict",
   },
   resave: false,
   saveUninitialized: true,
@@ -30,6 +30,7 @@ const sess = {
     db: sequelize,
   }),
 };
+sess.store.sync();
 app.use("/images", express.static(path.join(__dirname, "/public/images")));
 app.use(session(sess));
 
