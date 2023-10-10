@@ -203,3 +203,7 @@ img {
 .row {
   border-top: 2px gray solid;
 }
+
+#profileCard {
+  display: block;
+}
